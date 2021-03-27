@@ -348,7 +348,7 @@ PauseModes 类型是 typedef QFlags\<PauseMode\> 生成的用户自定义类型�
 
 [connectToHost()](#virtual-void-qabstractsocketconnecttohostconst-qhostaddress-address-quint16-port-qiodeviceopenmode-openmode--readwrite) 调用并成功建立一个连接后，QAbstractSocket 类将发送 connectd() 信号。
 
-**注意：** 在某些操作系统上，connected() 信号可能直接从 [connectToHost()](#virtual-void-qabstractsocketconnecttohostconst-qhostaddress-address-quint16-port-qiodeviceopenmode-openmode--readwrite) 调用发出，以连接到本地主机。
+**注意：**在某些操作系统上，connected() 信号可能直接从 [connectToHost()](#virtual-void-qabstractsocketconnecttohostconst-qhostaddress-address-quint16-port-qiodeviceopenmode-openmode--readwrite) 调用发出，以连接到本地主机。
 
 另外您也可以在 [connectToHost()](#virtual-void-qabstractsocketconnecttohostconst-qhostaddress-address-quint16-port-qiodeviceopenmode-openmode--readwrite) 和 [disconnected()](#signal-void-qabstractsocketdisconnected) 成员函数文档中找到相关信息。
 

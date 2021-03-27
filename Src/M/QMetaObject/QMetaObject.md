@@ -1,6 +1,6 @@
 # QMetaObject 结构体
 
-QMetaObject 类包含了 Qt 对象的元信息。[更多内容...](#%E8%AF%A6%E7%BB%86%E6%8F%8F%E8%BF%B0)。
+QMetaObject 类包含了 Qt 对象的元信息。[更多内容...](#详细描述)。
 
 | 属性   | 内容                      |
 | ------ | ------------------------- |
@@ -11,9 +11,9 @@ QMetaObject 类包含了 Qt 对象的元信息。[更多内容...](#%E8%AF%A6%E7
 
 ## 公共成员类型
 
-| 类型  | 名称                                        |
-| ----- | ------------------------------------------- |
-| class | **[Connection](QMetaObject_Connection.md)** |
+| 类型  | 名称                            |
+| ----- | ------------------------------- |
+| class | **[Connection](Connection.md)** |
 
 
 
@@ -70,7 +70,7 @@ QMetaObject 类包含了 Qt 对象的元信息。[更多内容...](#%E8%AF%A6%E7
 
 ## 宏定义
 
-| 返回类型               | 宏定义                                                       |
+| 返回类型               | 宏                                                           |
 | ---------------------- | ------------------------------------------------------------ |
 | QGenericArgument       | **[Q_ARG](#qgenericargument-qargtype-const-type-&value)**(*Type*, const Type &*value*) |
 | QGenericReturnArgument | **[Q_RETURN_ARG](#qgenericreturnargument-qreturnargtype-type-&value)**(*Type*, Type &*value*) |
@@ -79,7 +79,7 @@ QMetaObject 类包含了 Qt 对象的元信息。[更多内容...](#%E8%AF%A6%E7
 
 ## 详细描述
 
-Qt 的[元对象系统](../../T/The_Meta-Object_System/The_Meta-Object_System.md)负责信号槽跨对象通信机制、运行时类型信息和 Qt 的属性系统。应用中的每个 [QObject](../../O/QObject/QObject.md) 子类都有一个唯一的 QMetaObject 实例（`译者注：与类一一对应，即同一个 QObject 子类的任意对象，都使用同一个 QMetaObject`），其中保存了这个 [QObject](../../O/QObject/QObject.md) 子类的所有元信息，可以通过 [QObject::metaObject](../../O/QObject/QObject.md#metaObject)() 获取。
+Qt 的[元对象系统](../../T/The_Meta-Object_System/The_Meta-Object_System.md)负责信号槽跨对象通信机制、运行时类型信息和 Qt 的属性系统。应用中的每个 [QObject](../../O/QObject/QObject.md) 子类都有一个唯一的 QMetaObject 实例（译者注：与类一一对应，即同一个 QObject 子类的任意对象，都使用同一个 QMetaObject），其中保存了这个 [QObject](../../O/QObject/QObject.md) 子类的所有元信息，可以通过 [QObject::metaObject](../../O/QObject/QObject.md#metaObject)() 获取。
 
 QMetaObject 在应用编写中通常不需要，但在进行元编程时会非常有用，例如脚本引擎或者用户界面生成器。
 
@@ -461,7 +461,7 @@ Returns the number of methods in this class, including the number of methods pro
 
 构造一个此类的新实例。您可以传递最多十个参数 (`val0`, `val1`, `val2`, `val3`, `val4`, `val5`, `val6`, `val7`, `val8` 和 `val9`) 至构造函数。返回构造的新对象，若没有合适的构造函数则返回 `nullptr`。
 
-**注意：** 只有通过 [Q_INVOKABLE](../../O/QObject/QObject.md#Q_INVOKABLE) 修饰符声明的构造函数才能在元对象系统中使用。
+**注意：**只有通过 [Q_INVOKABLE](../../O/QObject/QObject.md#Q_INVOKABLE) 修饰符声明的构造函数才能在元对象系统中使用。
 
 该函数在 Qt 4.5 中被引入。
 

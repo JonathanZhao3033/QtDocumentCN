@@ -102,7 +102,7 @@ QAbstractAnimation 定义了所有动画共享的功能。通过继承这个类�
 
 动画的进度的当前时间由当前时间([currentLoopTime](int-qabstractanimationcurrentlooptime-const)())控制，数值从0毫秒开始到其最后的持续时间([duration](#pure-virtual-int-qabstractanimationduration-const)())。该值在动画运行时会自动更新，也可以直接由 [setCurrentTime]()() 来设置。
 
-在任何时候，动画的状态都只有三种：[Running](#enum-qabstractanimationstate)、[Stopped](#enum-qabstractanimationstate) 或 [Paused](#enum-qabstractanimationstate)——由枚举变量 [State](#enum-qabstractanimationstate)定义。可以通过函数 [start](#slot-void-qabstractanimationstartqabstractanimationdeletionpolicy-policy--keepwhenstopped)()、[stop](#slot-void-qabstractanimationstop)() 、[pause](#slot-void-qabstractanimationpause)() 或 [resume](#slot-void-qabstractanimationresume)() 来改变当前动画的状态。动画开始时总会重置它的[当前时间]()。若被暂停，则继续播放后会从相同的“当前时间”继续。若动画停止，则无法继续，但会保留“当前时间”（直到再次开始）。QAbstractAnimation 在状态改变时将会发出信号 [stateChanged](#signal-void-qabstractanimationstatechangedqabstractanimationstate-newstate-qabstractanimationstate-oldstate)()。
+在任何时候，动画的状态都只有三种：[Running](#enum-qabstractanimationstate)、[Stopped](#enum-qabstractanimationstate) 或 [Paused](#enum-qabstractanimationstate)——由枚举变量 [State](#enum-qabstractanimationstate)定义。可以通过函数 [start](#slot-void-qabstractanimationstartqabstractanimationdeletionpolicy-policy--keepwhenstopped)()、[stop](#slot-void-qabstractanimationstop)() 、[pause](#slot-void-qabstractanimationpause)() 或 [resume](#slot-void-qabstractanimationresume)() 来改变当前动画的状态。动画开始时总会充值它的[当前时间]()。若被暂停，则继续播放后会从相同的“当前时间”继续。若动画停止，则无法继续，但会保留“当前时间”（直到再次开始）。QAbstractAnimation 在状态改变时将会发出信号 [stateChanged](#signal-void-qabstractanimationstatechangedqabstractanimationstate-newstate-qabstractanimationstate-oldstate)()。
 
 通过设置 [loopCount](#loopcount--int) 属性，动画可以循环任意次数。当动画的时间到达 [duration](#pure-virtual-int-qabstractanimationduration-const)() 时，它将重置当前时间并继续运行。循环数为1（默认值）意味着动画只会播放一次。注意，若 `duration` 为-1，动画将无限播放，直到主动停止；当前时间会无限增长。当当前时间等于 [duration](#pure-virtual-int-qabstractanimationduration-const)() ，并且正在处理最后一次循环时，动画将进入 [Stopped](#enum-qabstractanimationstate) 状态，并发送 [finished]()() 信号。
 
@@ -278,7 +278,7 @@ QAbstractAnimation 为子类提供了纯虚函数来跟踪动画的进度：[dur
 
 每当当前循环发生变化时，[QAbstractAnimation](QAbstractAnimation.md) 会发射该信号。`currentLoop` 为当前循环。
 
-**注意：** 属性 `currentLoop` 的通知信号。
+**注意：**属性 `currentLoop` 的通知信号。
 
 **另请参阅：**[currentLoop](#currentloop--const-int)() 和 [loopCount](#loopcount--int)()。
 
@@ -288,7 +288,7 @@ QAbstractAnimation 为子类提供了纯虚函数来跟踪动画的进度：[dur
 
 每当方向改变时，[QAbstractAnimation](QAbstractAnimation.md) 会发射该信号。`newDirection` 为新方向。
 
-**注意：** 属性 `direction` 的通知信号。
+**注意：**属性 `direction` 的通知信号。
 
 **另请参阅：**[direction](#direction--direction)()。
 
@@ -342,7 +342,7 @@ QAbstractAnimation 为子类提供了纯虚函数来跟踪动画的进度：[dur
 
 每当动画的状态从 `oldState` 变为 `newState` 时，[QAbstractAnimation](QAbstractAnimation.md) 会发射此信号。此信号会在虚函数 [updateState](#virtual-protected-void-qabstractanimationupdatestateqabstractanimationstateenum-qabstractanimationstate-newstate-qabstractanimationstateenum-qabstractanimationstate-oldstate)()被调用后发射。
 
-**注意：** 属性 [state](#state--const-state) 的通知信号。
+**注意：**属性 [state](#state--const-state) 的通知信号。
 
 **另请参阅：**[updateState](#virtual-protected-void-qabstractanimationupdatestateqabstractanimationstateenum-qabstractanimationstate-newstate-qabstractanimationstateenum-qabstractanimationstate-oldstate)()。
 
