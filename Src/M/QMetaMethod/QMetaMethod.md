@@ -1,6 +1,6 @@
 # QMetaMethod 类
 
-QMetaMethod 类提供了对应一个成员函数的元数据。[更多内容...](#详细描述)
+QMetaMethod 类提供了对应一个成员函数的元数据。[更多内容...](#%E8%AF%A6%E7%BB%86%E6%8F%8F%E8%BF%B0)
 
 | 属性   | 内容                     |
 | ------ | ------------------------ |
@@ -64,7 +64,9 @@ QMetaMethod 类提供了对应一个成员函数的元数据。[更多内容...]
 
 ## 宏定义
 
-**[Q_METAMETHOD_INVOKE_MAX_ARGS](#qmetamethodinvokemaxargs)**
+| 宏定义                                                       |
+| ------------------------------------------------------------ |
+| **[Q_METAMETHOD_INVOKE_MAX_ARGS](#qmetamethodinvokemaxargs)** |
 
 
 
@@ -107,7 +109,7 @@ QMetaMethod 类具有一个 [methodType](#qmetamethodmethodtype-qmetamethodmetho
 
 返回该方法的访问权限(`private`、`protected` 或 `public)。
 
-**注意：**信号永远是公共的，但应将此认为是实现细节。在类外发射该类的信号通常是个坏主意。
+**注意：** 信号永远是公共的，但应将此认为是实现细节。在类外发射该类的信号通常是个坏主意。
 
 **另请参阅：**[methodType](#qmetamethodmethodtype-qmetamethodmethodtype-const)()。
 

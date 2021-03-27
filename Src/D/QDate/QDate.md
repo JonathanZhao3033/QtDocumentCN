@@ -19,6 +19,7 @@
 | enum | [MonthNameType](#enum-qdatemonthnametype){ DateFormat, StandaloneFormat } |
 
 
+
 ## 公共成员函数
 
 | 类型      | 函数名                                                       |
@@ -377,7 +378,7 @@ d2.daysTo(d1);          // returns -3
 
 注意 [Qt::TextDate](../../Q/Qt_Namespace/Qt_Namespace.md#DateFormat-enum)：建议使用英文的简写月份名称（例如 "Jan"）。尽管本地化的月份名称在 Qt 5 中也可使用，但它们会依赖于用户的区域设置。
 
-**注意：**怼本地化的日期的支持，包括 [Qt::SystemLocaleDate](../../Q/Qt_Namespace/Qt_Namespace.md#DateFormat-enum)、[Qt::SystemLocaleShortDate](../../Q/Qt_Namespace/Qt_Namespace.md#DateFormat-enum)、[Qt::SystemLocaleLongDate](../../Q/Qt_Namespace/Qt_Namespace.md#DateFormat-enum)、[Qt::LocaleDate](../../Q/Qt_Namespace/Qt_Namespace.md#DateFormat-enum)、[Qt::DefaultLocaleShortDate](../../Q/Qt_Namespace/Qt_Namespace.md#DateFormat-enum) 和 [Qt::DefaultLocaleLongDate](../../Q/Qt_Namespace/Qt_Namespace.md#DateFormat-enum)，将在 Qt 6 被移除。使用 [QLocale::toDate](../../L/QLocale/QLocale.md#toDate)() 代替。
+**注意：** 对本地化的日期的支持，包括 [Qt::SystemLocaleDate](../../Q/Qt_Namespace/Qt_Namespace.md#DateFormat-enum)、[Qt::SystemLocaleShortDate](../../Q/Qt_Namespace/Qt_Namespace.md#DateFormat-enum)、[Qt::SystemLocaleLongDate](../../Q/Qt_Namespace/Qt_Namespace.md#DateFormat-enum)、[Qt::LocaleDate](../../Q/Qt_Namespace/Qt_Namespace.md#DateFormat-enum)、[Qt::DefaultLocaleShortDate](../../Q/Qt_Namespace/Qt_Namespace.md#DateFormat-enum) 和 [Qt::DefaultLocaleLongDate](../../Q/Qt_Namespace/Qt_Namespace.md#DateFormat-enum)，将在 Qt 6 被移除。使用 [QLocale::toDate](../../L/QLocale/QLocale.md#toDate)() 代替。
 
 **另请参阅：**[toString](#qstring-qdatetostringconst-qstring-format-const)() 和 [QLocale::toDate](../../L/QLocale/QLocale.md#toDate)()。
 
@@ -415,7 +416,7 @@ QDate date = QDate::fromString("1MM12car2003", "d'MM'MMcaryyyy");
 // date is 1 December 2003
 ```
 
-如果字符串不符合格式，一个将返回一个非法的 QDate。不需要前面补0的格式是贪婪的，这意味着他们会读取两位数，尽管数字大小超出日期合法范围，并且会占据给后续格式读取的数字位置。例如，下面的日期可以表示1月30日，但M格式会捕获俩数字，导致日期返回非法：
+如果字符串不符合格式，一个将返回一个非法的 QDate。不需要前面补0的格式是贪婪的，这意味着他们会读取两位数，尽管数字大小超出日期合法范围，并且会占据给后续格式读取的数字位置。例如，下面的日期可以表示1月30日，但M格式会捕获两位数字，导致日期返回非法：
 
 ```
 QDate date = QDate::fromString("130", "Md"); // invalid
@@ -449,7 +450,7 @@ QDate::fromString("20000110", "yyyyMd");    // January 10, 2000
 
 如果日期非法，返回的是0。
 
-**注意：**在 Qt 5.7 之前, 这个函数不是常函数。
+**注意：** 在 Qt 5.7 之前, 这个函数不是常函数。
 
 此函数在 Qt 4.5 中引入。
 
@@ -577,7 +578,7 @@ QDate::isValid(1202, 6, 6);   // true (即使这一年在格里高利历之前)
 
 如果  *yearNumber*  不是 `nullptr`(默认参数), 年号返回值存于 `*yearNumber`。
 
-根据 ISO 8601, 格里高利历中，跨年的周属于天数更多的那年。 由于 ISO 8601 规定一周始于周一，周三在哪一年这周就属于哪一年。 大多数年有52周，但也有53周。
+根据 ISO 8601, 格里高利历中，跨年的周属于天数更多的那年。 由于 ISO 8601 规定一周始于周一，周三在哪一年这周就属于哪一年。 大多数年有52周，但也有53周的年份。
 
 **注意：** **yearNumber*  不总是与 [year](#int-qdateyear-const)() 相等。例如, 2000.1.1是1999年第52周, 2002.12.31是2003年第1周。
 
@@ -595,7 +596,7 @@ QDate::isValid(1202, 6, 6);   // true (即使这一年在格里高利历之前)
 
 如果日期不合法，返回0。在一些日历系统中，比第一年早的年份非法。
 
-如果使用包含第0年的日历系统，在返回0时通过 [isValid](#bool-qdateisvalid-const)() 判断是否合法。这些个日历正常的使用负年份，-1年的下一年是0年，再下一年是1年。
+如果使用包含第0年的日历系统，在返回0时通过 [isValid](#bool-qdateisvalid-const)() 判断是否合法。这些日历正常的使用负年份，-1年的下一年是0年，再下一年是1年。
 
 一些日历中，没有0年份但是有负数年份。例如格里高利历，公元前x年就是年份-x。
 
@@ -615,7 +616,7 @@ QDate::isValid(1202, 6, 6);   // true (即使这一年在格里高利历之前)
 
 ### bool QDate::operator>=(const QDate &*d*) const
 
-对于日期A和B，大于意味着如期靠后，小于意味着日期靠前，相等就是同一天。
+对于日期A和B，大于意味着日期靠后，小于意味着日期靠前，相等就是同一天。
 
 
 
